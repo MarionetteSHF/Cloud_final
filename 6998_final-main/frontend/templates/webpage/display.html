@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title> CIRCULATION </title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='veg/css/bootstrap.css') }}" />
+    <!-- font awesome style -->
+    <link href="{{ url_for('static',filename='veg/css/font-awesome.min.css') }}" rel="stylesheet" />
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700&display=swap"
+        rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',filename='veg/css/style.css') }}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{{ url_for('static',filename='veg/css/responsive.css') }}" rel="stylesheet" />
+
+    <!-- wtacher -->
+    <link href="{{ url_for('static',filename='display/css/style.css') }}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{{ url_for('static',filename='display/css/responsive.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static',filename='display/css/bootstrap.css') }}" rel="stylesheet" />
+</head>
+
+
+<body>
+    <div class="hero_area">
+        <div class="hero_bg_box">
+            <img src="{{ url_for('static', filename='veg/images/index.png')}}" alt="">
+        </div>
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                    <a class="navbar-brand" href="/index">
+                        <span>
+                            CIRCULATION
+                        </span>
+                    </a>
+                    <div class="" id="">
+                        <div class="container">
+                            <div class=" mr-auto flex-column flex-lg-row align-items-center">
+                                <ul class="navbar-nav justify-content-between ">
+                                    <div class="User_option">
+                                        <li class="">
+                                            <a class="" href="/profile/{{session['user_id']}}">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <form class="form-inline ">
+                                            <!-- <button class="btn   nav_search-btn" type="submit">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button> -->
+                                        </form>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="custom_menu-btn">
+                            <button onclick="openNav()">
+                                <span class="s-1"> </span>
+                                <span class="s-2"> </span>
+                                <span class="s-3"> </span>
+                            </button>
+                        </div>
+                        <div id="myNav" class="overlay">
+                            <div class="overlay-content">
+                                <a href="/index">HOME</a>
+                                <!-- <a href="about.html">ABOUT</a> -->
+                                <!-- <a href="vegetables.html">Log in</a> -->
+                                <a href="/register">Register/Log in</a>
+                                <a href="/create/{{session['user_id']}}">Post</a>
+                            </div>
+                            <div class="overlay-content2">
+                                <a href="/furniture">Furniture</a>
+                                <a href="/entertainment">Entertainment</a>
+                                <a href="/book">Book</a>
+                                <a href="/clothes">Clothes</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+        <!-- slider section -->
+        <section class="slider_section ">
+            <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <h5>
+                                            01
+                                        </h5>
+                                        <h1>
+                                            Find<br />
+                                            your need
+                                        </h1>
+                                        <!-- <a href="" class="">
+                      buy Now
+                    </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <h5>
+                                            02
+                                        </h5>
+                                        <h1>
+                                            Contact <br />
+                                            the owner
+                                        </h1>
+                                        <!-- <a href="" class="">
+                      buy Now
+                    </a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#customCarousel1" data-slide-to="1"></li>
+                </ol>
+            </div>
+        </section>
+        <!-- end slider section -->
+    </div>
+
+    <!-- veg section -->
+    <!-- {% for x in rows %} -->
+
+
+
+    <!-- {% endfor %} -->
+    <style>
+        #img {
+            width: 200px;
+            height: 200px;
+            max-width: 250px;
+            max-height: 250px;
+
+        }
+
+        .img-box {
+            width: 200px;
+        }
+
+
+
+        #detaila:hover {
+            color: rgb(53, 114, 178);
+        }
+
+        #detaila {
+            color: rgb(56, 182, 129);
+            text-decoration-line: underline;
+        }
+
+        .posting {
+
+            display: flex;
+            align-content: center;
+            align-items: center;
+            align-self: center;
+
+            margin: 1em 10% 1em 10%;
+            padding: 40px;
+            justify-content: space-between;
+        }
+
+        .firstC {
+            margin: 1em 1em 1em 1%;
+        }
+
+        .secondC {
+            margin: 1em 1em 1em 1%;
+        }
+
+        .inputlabel {
+            font-size: 20px;
+            margin: 2%;
+            margin: 1em 1em 1em 1%;
+            border: 2px solid rgb(19, 152, 169);
+            padding: 1em;
+            background: linear-gradient(to right, #72b6ff, #70f27f);
+        }
+
+        .postinput {
+            border: 2px solid rgb(19, 152, 169);
+        }
+
+
+
+
+
+
+        .form-example {
+            margin: 1em 1em 1em 1%
+        }
+    </style>
+
+
+
+
+
+
+
+
+    <div class="bg">
+
+        <!-- about section -->
+        <section class="about_section layout_padding" style="color: black;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5 offset-md-2">
+                        <div class="about_detail-box">
+                            <h3 class="custom_heading ">
+                                {{row[2]}} (${{row[5]}})
+                            </h3>
+                            <!-- <section>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="box" id="box">
+
+                                        <div class="detail-box">
+
+                                            <div class="price_box">
+                                                <h6 class="price_heading">
+                                                    <span>$</span> {{row[5]}}
+                                                </h6>
+                                            </div>
+                                            <div class="price_box">
+                                                <h6 class="price_heading">
+                                                    Description:{{row[3]}}
+                                                </h6>
+                                            </div>
+                                            <div class="price_box">
+                                                <h6 class="price_heading">
+                                                    Owner:{{row[9]}} Posted at:{{row[0]}}
+                                                </h6>
+                                            </div>
+                                            <div class="price_box">
+                                                <h6 class="price_heading">
+                                                    Category:{{row[6]}}
+                                                </h6>
+                                            </div>
+                                            <div class="price_box">
+                                                <h6 class="price_heading">
+                                                    Need or Sell:{{"Sale" if row[8] else "Need"}}
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section> -->
+
+                            <p> Owner: {{row[9]}} Posted at: {{row[0]}}</p>
+                            <p>Need or Sell:{{"Need" if row[8] else "Sale"}}</p>
+                            <p class="">
+
+                            <p>Description:{{row[3]}}</p>
+                            <!-- <p>Category:</p>{{row[6]}} -->
+                            <!-- <p>Number: {{row[7]}}</p> -->
+                            <p>Number: {{row[7]}} </p>
+                            </p>
+                            <p>
+                                Email:{{row[10]}}
+                            </p>
+                            <p>
+                                Phone: {{ row[11] if row[11] else "No phone number"}}
+                            </p>
+                            <div>
+                                <a href="/addtowish/{{row[4]}}">
+                                    Add to wish list
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- <div class="about_img-box" style="text-align-last: center; font-size: 2em; font-weight:500;">
+                            <div>{{row[2]}}{{row[5]}}</div>
+                        </div> -->
+                        <div class="about_img-box">
+                            {% for f in file%}
+                            <tr>
+                                <td><img style="" src="data:;base64,{{ f[0] }}"></td>
+                            </tr>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+
+    <div class="bg">
+
+        <!-- about section -->
+        <section class="about_section layout_padding" style="color: black;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5 offset-md-2">
+                        <div class="about_detail-box">
+                            <h3 class="custom_heading ">
+                                People's Comments
+                            </h3>
+                            <section class="poting">
+                                <section class="frstC">
+
+                                    {% for comm in comms %}
+
+
+                                    <div class="fo-example">{{comm[0]}}：{{comm[1]}} -Date:{{comm[2]}}</div>
+                                    {% endfor %}
+                                </section>
+                            </section>
+
+
+                            <!-- <p>
+                                phone:
+                            </p> -->
+                            <!-- <div>
+                                <a href="/addtowish">
+                                    Add to wish list
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="about_img-box">
+                            <img src="{{ url_for('static', filename='veg/images/display1.png')}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <div class="bg">
+
+        <!-- about section -->
+        <section class="about_section layout_padding" style="color: black;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5 offset-md-2">
+                        <div class="about_detail-box">
+                            <h3 class="custom_heading ">
+                                Leave your comment
+                            </h3>
+
+
+
+                            <form action="" method="post">
+
+
+                                <section class="firstC">
+                                    <div class="form-example">
+
+                                        <input class="poinput" type="text" name="comment" required>
+                                    </div>
+                                    <div class=" form-example">
+                                        <input class="ponput" type="submit" value="Comment">
+                                    </div>
+
+                                </section>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="about_img-box">
+                            <tr>
+                                <td><img src="{{ url_for('static', filename='veg/images/display2.png')}}" alt=""></td>
+                            </tr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+
+    <section class="about_section ">
+        <div class="about_bg_box">
+            <img src="{{ url_for('static',filename='veg/images/school.png') }}" alt="">
+        </div>
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-6 ml-auto ">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                We Provide <br>
+                                Easy-to-use interface
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--{{ url_for('static',filename='veg/css/font-awesome.min.css') }}-->
+    <script type="text/javascript" src="{{ url_for('static',filename='veg/js/jquery-3.4.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='veg/js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='veg/js/custom.js') }}"></script>
+    <!-- <script src="/js/display.js"></script> -->
+    <script src="/index.js"></script>
+
+    <!--    <script type="text/javascript" src="static/veg/js/custom.js"></script>-->
+    <!-- Google Map -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
+</body>
+
+</html>
